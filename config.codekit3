@@ -9,6 +9,19 @@
 	],
 "creatorBuild": "25504",
 "files": {
+	"\/_source\/_base.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/_base.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/_source\/scripts.js": {
 		"ft": 64,
 		"mi": 1,
@@ -30,6 +43,14 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
+		},
+	"\/assets\/logo.png": {
+		"ft": 32768,
+		"iS": 755,
+		"oA": 0,
+		"oAP": "\/assets\/logo.png",
+		"oF": 0,
+		"opt": 0
 		},
 	"\/assets\/scripts-min.js": {
 		"ft": 64,
@@ -62,13 +83,23 @@
 		"oAP": "\/index.html",
 		"oF": 0
 		},
-	"\/logo.png": {
-		"ft": 32768,
-		"iS": 755,
+	"\/README.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
 		"oA": 0,
-		"oAP": "\/logo.png",
+		"oAP": "\/README.html",
 		"oF": 0,
-		"opt": 0
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		}
 	},
 "hooks": [
