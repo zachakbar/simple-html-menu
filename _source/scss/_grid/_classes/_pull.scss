@@ -1,0 +1,18 @@
+/************************************************************************/
+/* PULL CLASSES
+/************************************************************************/
+@for $i from 1 through $columns{
+	.pull-m-#{$i}{
+		@include post($i of $columns);
+	}
+}
+
+@each $name, $breakpoint, $class in $grid_classes{
+	@include breakpoint(#{$breakpoint}){
+		@for $i from 1 through $columns{
+			.pull-#{$class}-#{$i}{
+				@include post($i of $columns);
+			}
+		}
+	}
+}

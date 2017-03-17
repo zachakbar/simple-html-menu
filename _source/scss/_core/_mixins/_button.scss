@@ -1,0 +1,32 @@
+//------------------------------------------------------------------------
+// BUTTON
+//------------------------------------------------------------------------
+@mixin btn($btn_bg, $btn_border, $btn_color) {
+	@extend .btn-static;
+	background: $btn_bg;
+	border-color: $btn_border;
+	color: $btn_color;
+
+	&:visited {
+		background: $btn_bg;
+		border-color: $btn_border;
+		color: $btn_color;
+	}
+}
+
+@mixin btn-static{
+	border-width: $btn_border_width;
+	border-style: $btn_border_style;
+	font-family: $btn_font;
+	font-size: $btn_font_size;
+	font-weight: $btn_font_weight;
+	line-height: $btn_line_height;
+	padding: $btn_padding;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	
+	@include border-radius($btn_border_radius);
+}
+
+.btn-static{ @include btn-static; }

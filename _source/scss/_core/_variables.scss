@@ -1,0 +1,55 @@
+//------------------------------------------------------------------------
+// VARIABLES
+//------------------------------------------------------------------------
+
+$black: rgb(20,20,20);
+$darkgrey: rgb(51,51,51);
+$grey: rgb(153,153,153);
+$lightgrey: rgb(204,204,204);
+$white: rgb(255,255,255);
+
+// Site Colors
+
+$blue: rgb(0,180,188);
+$msggreen: rgb(60,150,10); // Used for Success Messages
+$msgred: rgb(225,0,0); // Used for Error Messages
+$bgcolor: $white;
+
+// Typography
+
+$text_color: $darkgrey;
+$base_font: $font-stack-helvetica;
+$base_font_size: 1.8rem;
+$base_font_weight: 400;
+$base_line_height: 1.2;
+
+$heading_font: $font-stack-helvetica;
+$heading_color: $black;
+
+
+// Links
+
+$link_color: $blue;
+$link_font_weight: 400;
+$link_hover: shade($blue,30%);
+
+// Elements
+
+$placeholder_color: $grey;
+$input_border: 1px solid $grey;
+$input_border_radius: 2px;
+$input_padding: 1rem 1.5rem;
+$input_margin: 0 0 1rem;
+$input_focus_glow: 0 0 0.5rem rgba($blue,0.5);
+
+
+// Buttons
+
+$btn_border_width: 2px;
+$btn_border_style: solid;
+$btn_font: $base_font;
+$btn_font_size: 1.6rem;
+$btn_font_weight: 400;
+$btn_line_height: 1;
+$btn_padding: 1rem 2rem;
+$btn_border_radius: 3px;

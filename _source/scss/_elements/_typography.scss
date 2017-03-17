@@ -1,0 +1,144 @@
+/************************************************************************/
+/* TYPOGRAPHY
+/************************************************************************/
+
+a {
+	color: $link_color;
+	font-weight: $link_font_weight;
+	text-decoration: none;
+	@include single-transition(all, 0.2s, ease-in-out);
+	
+	&:active,
+	&:focus,
+	&:hover {
+		color: shade($link_color,25%);
+		outline: 0;
+	}
+	
+	&.tooltip-item {
+		position: relative;
+		
+		&::after {
+			background-color: $white;
+			border: $input_border;
+			color: $text_color;
+			font-size: modular-scale(-1);
+			content: attr(aria-label);
+			display: none;
+			@include position(absolute, null null 100% 0);
+			padding: 1rem;
+			pointer-events: none;
+		}
+	
+		&:hover::after,
+		&:focus::after{
+			display: inline-block;
+		}
+	}
+}
+
+p {
+	font-size: $base_font_size;
+	line-height: $base_line_height;
+	@include margin(null null 1.5rem null);
+}
+
+//------------------------------------------------------------------------
+// HEADINGS
+//------------------------------------------------------------------------
+
+#{headings()} {
+	color: $heading_color;
+	font-family: $heading_font;
+	font-weight: 500;
+	text-rendering: optimizelegibility;
+	line-height: $base_line_height;
+	margin-bottom: 1rem;
+}
+
+h1 {
+	font-size: 3.2rem;
+}
+
+h2 {
+	font-size: 2.4rem;
+}
+
+h3 {
+	font-size: 2.0rem;
+}
+
+h4 {
+	font-size: 1.8rem;
+}
+
+h5 {
+	font-size: 1.6rem;
+}
+
+h6 {
+	font-size: 1.4rem;
+}
+
+//------------------------------------------------------------------------
+// BASIC TYPOGRAPHY ELEMENTS
+//------------------------------------------------------------------------
+
+blockquote {
+	@extend p;
+	border-left: 2px solid $grey;
+	color: $grey;
+	font-style: italic;
+	@include padding(null null null 1.8rem);
+}
+
+ul,
+ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+article {
+	
+	ul,
+	ol {
+		font-size: $base_font_size;
+		@include padding(null null null 1.8rem);
+		@include margin(null null 1.5rem null);
+		
+		li {
+			line-height: 1.8rem;
+			@include margin(null null 0.5rem null);
+		}
+	    
+		ul,
+		ol {
+			@include margin(null null 0 null);
+		}
+  	}
+  	
+	ul { list-style-type: disc; }
+	ol { list-style-type: decimal; }
+}
+
+
+sup {
+	font-size: 0.9rem;
+	@include position(relative, -0.75rem null null null);
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+i,
+em{
+	font-style: italic;
+}
+
+small,
+.small{
+	font-size: 75%;
+}

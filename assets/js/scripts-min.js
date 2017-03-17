@@ -1,0 +1,1 @@
+function navMenu(){var n=$("#menu"),e=$("#nav_btn");e.click(function(){return e.toggleClass("active"),e.find("#nav_icon").toggleClass("open"),n.slideToggle("fast"),!1})}$(document).ready(function(){navMenu()});

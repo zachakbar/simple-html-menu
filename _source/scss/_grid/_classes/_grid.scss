@@ -1,0 +1,77 @@
+/************************************************************************/
+/* SMALL GRID CLASSES
+/************************************************************************/
+@for $i from 1 through $columns{
+	.sm-#{$i} {
+		@include span($i of $columns);
+		@if $GRID_TYPE == 'static'{ padding: $grid_padding; }
+		$nth: unquote(($columns / $i) + 'n');
+		@if $i == 1{
+			&.last, &:nth-child(#{$nth}){
+				@include span($i of $columns last);
+			}
+		}@else if $i == 2{
+			&.last, &:nth-child(#{$nth}){
+				@include span($i of $columns last);
+			}
+		}@else if $i == 3{
+			&.last, &:nth-child(#{$nth}){
+				@include span($i of $columns last);
+			}
+		}@else if $i == 4{
+			&.last, &:nth-child(#{$nth}){
+				@include span($i of $columns last);
+			}
+		}@else if $i == 6{
+			&.last, &:nth-child(#{$nth}){
+				@include span($i of $columns last);
+			}
+		}@else{
+			&.last{
+				@include span($i of $columns last);
+			}
+		}
+	}
+}
+
+@each $name, $breakpoint, $class in $grid_classes{
+	/************************************************************************/
+	/* #{$name} GRID CLASSES
+	/************************************************************************/
+	@include breakpoint(#{$breakpoint}){
+		@for $i from 1 through $columns{
+			$x: unquote('.' + $class + '-' + $i);
+			#{$x}{
+				@include span($i of $columns);
+				@if $GRID_TYPE == 'static'{ padding: $grid_padding; }
+				&:nth-child(12n), &:nth-child(6n), &:nth-child(4n), &:nth-child(3n), &:nth-child(2n) { @include span($i of $columns); };
+				$nth: unquote(($columns / $i) + 'n');
+				@if $i == 1{
+					&.last, &:nth-child(#{$nth}){
+						@include span($i of $columns last);
+					}
+				}@else if $i == 2{
+					&.last, &:nth-child(#{$nth}){
+						@include span($i of $columns last);
+					}
+				}@else if $i == 3{
+					&.last, &:nth-child(#{$nth}){
+						@include span($i of $columns last);
+					}
+				}@else if $i == 4{
+					&.last, &:nth-child(#{$nth}){
+						@include span($i of $columns last);
+					}
+				}@else if $i == 6{
+					&.last, &:nth-child(#{$nth}){
+						@include span($i of $columns last);
+					}
+				}@else{
+					&.last{
+						@include span($i of $columns last);
+					}
+				}
+			}
+		}
+	}
+}

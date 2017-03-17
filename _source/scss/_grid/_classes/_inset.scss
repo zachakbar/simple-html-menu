@@ -1,0 +1,18 @@
+/************************************************************************/
+/* INSET CLASSES
+/************************************************************************/
+@for $i from 1 through $columns{
+	.inset-m-#{$i}{
+		@include pad($i of $columns, $i of $columns);
+	}
+}
+
+@each $name, $breakpoint, $class in $grid_classes{
+	@include breakpoint(#{$breakpoint}){
+		@for $i from 1 through $columns{
+			.inset-#{$class}-#{$i}{
+				@include pad($i of $columns, $i of $columns);
+			}
+		}
+	}
+}

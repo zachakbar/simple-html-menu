@@ -1,0 +1,17 @@
+//------------------------------------------------------------------------
+// WRAP
+//------------------------------------------------------------------------
+@mixin wrap{
+	//@include container(show-columns);
+	@include container();
+	
+	@if $GRID_TYPE == 'static'{
+		padding: $grid_padding;
+	}
+	
+	@include susy-breakpoint($xl,$susy2){
+		//@include container($susy2 show-columns);
+		@include container($susy2);
+	}
+}
+.wrap{ @include wrap; }

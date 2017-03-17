@@ -1,0 +1,32 @@
+/************************************************************************/
+/* SHOW/HIDE CLASSES
+/************************************************************************/
+.hide-m-down{
+	display: none;
+	@include breakpoint($md){
+		display: block;
+	}
+}
+
+@each $name, $breakpoint, $class in $grid_classes{
+	.hide-#{$class}-down{
+		display: none;
+		@include breakpoint(#{$breakpoint}){
+			display: block;
+		}
+	}
+}
+
+.hide-m-up{
+	@include breakpoint($md){
+		display: none;
+	}
+}
+
+@each $name, $breakpoint, $class in $grid_classes{
+	.hide-#{$class}-up{
+		@include breakpoint(#{$breakpoint}){
+			display: none;
+		}
+	}
+}

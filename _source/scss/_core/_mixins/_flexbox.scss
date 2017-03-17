@@ -1,0 +1,108 @@
+//------------------------------------------------------------------------
+// FLEXBOX
+//------------------------------------------------------------------------
+
+// FLEXBOX MIXINS
+@mixin flexbox() {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($value){
+	-ms-flex-wrap: $value;
+	-webkit-flex-wrap: $value;
+	flex-wrap: $value;
+}
+
+// Shorthand for flex-grow, flex-shrink and optionally flex-basis. Space separated, in that order.
+@mixin flex($values){
+	-ms-flex:  $values;
+	-webkit-flex:  $values;
+	flex:  $values;
+}
+
+// flex-start | flex-end | center | space-between | space-around
+@mixin flex-justify-content($value) {
+	@if $value == 'flex-start'{
+		-ms-flex-pack: start;
+		-webkit-justify-content: $value;
+		justify-content: $value;
+	}@else if $value == 'flex-end'{
+		-ms-flex-pack: end;
+		-webkit-justify-content: $value;
+		justify-content: $value;
+	}@else if $value == 'space-between'{
+		-ms-flex-pack: justify;
+		-webkit-justify-content: $value;
+		justify-content: $value;
+	}@else if $value == 'space-around'{
+		-ms-flex-pack: distribute;
+		-webkit-justify-content: $value;
+		justify-content: $value;
+	}@else{
+		-ms-flex-pack: $value;
+		-webkit-justify-content: $value;
+		justify-content: $value;
+	}
+}
+
+// flex-start | flex-end | center | baseline | stretch
+@mixin flex-align-items($value){
+	@if $value == 'flex-start'{
+		-ms-flex-align: start;
+		-webkit-align-items: $value;
+		align-items: $value;
+	}@else if $value == 'flex-end'{
+		-ms-flex-align: end;
+		-webkit-align-items: $value;
+		align-items: $value;
+	}@else{
+		-ms-flex-align: $value;
+		-webkit-align-items: $value;
+		align-items: $value;
+	}
+}
+
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin flex-align-content($value){
+	@if $value == 'flex-start'{
+		-ms-flex-line-pack: start;
+		-webkit-align-content: $value;
+		align-content: $value;
+	}@else if $value == 'flex-end'{
+		-ms-flex-line-pack: end;
+		-webkit-align-content: $value;
+		align-content: $value;
+	}@else if $value == 'space-between'{
+		-ms-flex-line-pack: justify;
+		-webkit-align-content: $value;
+		align-content: $value;
+	}@else if $value == 'space-around'{
+		-ms-flex-line-pack: distribute;
+		-webkit-align-content: $value;
+		align-content: $value;
+	}@else{
+		-ms-flex-line-pack: $value;
+		-webkit-align-content: $value;
+		align-content: $value;
+	}
+}
+
+//  auto | flex-start | flex-end | center | baseline | stretch
+@mixin flex-align-self($value){
+	@if $value == 'flex-start'{
+		-ms-flex-item-align: start;
+		-webkit-align-self: $value;
+		align-self: $value;
+	}@else if $value == 'flex-end'{
+		-ms-flex-item-align: end;
+		-webkit-align-self: $value;
+		align-self: $value;
+	}@else{
+		-ms-flex-item-align: $value;
+		-webkit-align-self: $value;
+		align-self: $value;
+	}
+}

@@ -1,0 +1,143 @@
+/************************************************************************/
+/* FORMS
+/************************************************************************/
+
+// https://css-tricks.com/almanac/selectors/p/placeholder/
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+::-ms-input-placeholder,
+:placeholder-shown {
+	color: $placeholder_color;
+}
+
+label, legend {
+	display: block;
+	font-size: $base_font_size;
+	line-height: $base_line_height;
+}
+
+#{$all-text-inputs} {
+	background: $white;
+	border: $input_border;
+	@include border-radius($input_border_radius);
+	color: $text_color;
+	font-family: $base_font;
+	font-size: $base_font_size;
+	line-height: $base_line_height;
+	display: inline-block;
+	@include size(100%,auto);
+	padding: $input_padding;
+	margin: $input_margin;
+	outline: none;
+	@include single-transition(all, 0.2s, ease-in-out);
+	
+	&:hover {
+		border-color: shade($blue,20%);
+	}
+	
+	&:focus {
+		border-color: $blue;
+		outline: none;
+		@include box-shadow($input_focus_glow);
+	}
+	
+	&:disabled {
+		background-color: tint($lightgrey,50%);
+		cursor: not-allowed;
+	
+		&:hover {
+			border: $input_border;
+		}
+	}
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline;
+	@include size(auto);
+	padding: 0;
+	margin: 0 0.5rem 1rem 0;
+}
+
+input[type="color"]{
+	border: 0;
+	@include size(4.1rem);
+	padding: 0;
+}
+
+input[type="submit"]{
+	@include btn($darkgrey, $darkgrey, $white);
+	-webkit-appearance: none;
+	@include size(100%,auto);
+
+	@include breakpoint($md){
+		@include size(auto);
+	}
+}
+
+.options-list {
+	list-style-type: none;
+	padding: 0;
+}
+
+.styled-select {
+	background: $white url("../img/select-arrow.png") right center no-repeat;
+	border: $input_border;
+	@include border-radius($input_border_radius);
+	@include size(100%,4rem);
+	margin: $input_margin;
+	overflow: hidden;
+	-webkit-appearance: none;
+	
+	&:hover {
+		border-color: shade($blue,20%);
+	}
+	
+	&.focus{
+		border-color: $blue;
+		outline: none;
+		@include box-shadow($input_focus_glow);
+	}
+	
+	&.disabled {
+		background-color: tint($lightgrey,50%);
+		
+		select{ cursor: not-allowed; }
+	
+		&:hover {
+			border: $input_border;
+		}
+	}
+
+	select {
+		background: transparent;
+		border: 0 !important;
+		@include border-radius(0);
+		color: $grey;
+		font-size: $base_font_size;
+		@include size(115%,4rem);
+		padding: $input_padding;
+		outline: none;
+	}
+}
+
+.message {
+	border: 2px solid $text_color;
+	@include border-radius(3px);
+	color: $white;
+	padding: 1rem 1.5rem;
+	@include margin(null null 1rem null);
+
+	&.error {
+	    background: $msgred;
+	    background: rgba($msgred,0.6);
+	    border-color: $msgred;
+	}
+	&.success {
+	    background: $msggreen;
+	    background: rgba($msggreen,0.6);
+	    border-color: $msggreen;
+	}
+}

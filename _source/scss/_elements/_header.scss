@@ -1,50 +1,32 @@
-@import "compass";
-@import "breakpoint";
-@import "susy";
-
-$white: rgb(255,255,255);
-$grey: rgb(153, 153, 153);
-$black: #141414;
-
-* { box-sizing: border-box; }
-
-html { font-size: 10px; }
-
-body {
-	font-family: Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	line-height: 1.2;
-	padding: 0;
-	margin: 0;
-}
+/************************************************************************/
+/* HEADER STYLES
+/************************************************************************/
 
 header[role="banner"] {
 	@include clearfix;
-	background: $black;
-	position: relative;
+	@include background-image(linear-gradient(to bottom, tint($black,25%), tint($darkgrey,50%)));
 	
 	.wrap {
-		max-width: 100%;
-		@include breakpoint(570px){
-			max-width: 1200px;
-			margin: 0 auto;
+		padding: 0;
+		
+		@include breakpoint($md){
+			@include wrap();
 		}
 	}
 	
 	.logo {
-		float: left;
-		display: block;
-		padding: 2rem 1rem;
+		display: inline-block;
+		padding: 2rem 1.5rem;
 	}
 	
 	#nav_btn {
 		color: $white;
-	   font-size: 1.6rem;
+	   font-size: 1.8rem;
 	   text-decoration: none;
-		margin: 3rem 1rem 0 0;
+		padding: 3rem 1.5rem 0 0;
 	   float: right;
 	    
-		@include breakpoint(570px) {
+		@include breakpoint($md) {
 			display: none !important;
 		}
 		
@@ -105,13 +87,14 @@ header[role="banner"] {
 	
 	nav[role="navigation"] {
 	    @include clearfix;
-	    font-size: 1.6rem;
-	    line-height: 1.2;
+	    background-color: $black;
+	    font-size: 1.8rem;
 	    width: 100%;
 	    overflow: hidden;
 	    display: none;
 		
-		@include breakpoint(570px) {
+		@include breakpoint($md) {
+			background: none;
 			width: auto;
 			padding: 2rem 0 0;
 			overflow: visible;
@@ -124,13 +107,13 @@ header[role="banner"] {
 			margin: 0;
 			padding: 0;
 			
-			@include breakpoint(570px) {
+			@include breakpoint($md) {
 				border: 0;
 				display: inline-block;
 			}
 			
 			li {
-				@include breakpoint(570px) {
+				@include breakpoint($md) {
 					display: inline-block;
 					float: left;
 				}
@@ -143,7 +126,7 @@ header[role="banner"] {
 				padding: 1rem;
 				display: block;
 				
-				@include breakpoint(570px) {
+				@include breakpoint($md) {
 					border: 0;
 				}
 			}

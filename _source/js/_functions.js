@@ -1,9 +1,8 @@
 /************************************************************************/
-/* SCRIPTS
+/* JAVASCRIPT FUNCTIONS
 /************************************************************************/
 
-$(document).ready(function() {
-	
+function navMenu(){
 	var menu = $('#menu'),
 	nav_btn = $('#nav_btn');
 
@@ -13,5 +12,4 @@ $(document).ready(function() {
 		menu.slideToggle('fast');
 		return false;
 	});
-	
-});
+}

@@ -1,0 +1,9 @@
+/************************************************************************/
+/* FOOTER STYLES
+/************************************************************************/
+
+footer[role="contentinfo"] {
+	@include clearfix;
+	background-color: tint($lightgrey, 50%);
+	padding: 2rem 0;
+}
