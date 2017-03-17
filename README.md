@@ -50,10 +50,10 @@ header[role="banner"] {
 	
 	#nav_btn {
 		color: $white;
-	   font-size: 1.8rem;
-	   text-decoration: none;
+		font-size: 1.8rem;
+		text-decoration: none;
 		padding: 3rem 1.5rem 0 0;
-	   float: right;
+		float: right;
 	    
 		@include breakpoint($md) {
 			display: none !important;
@@ -129,7 +129,7 @@ header[role="banner"] {
 			overflow: visible;
 			float: right;
 			display: block !important;
-    	}
+		}
 		
 		ul {
 			border-top: 1px solid $grey;
