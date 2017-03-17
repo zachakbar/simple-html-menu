@@ -1,8 +1,6 @@
 # Simple HTML Menu
 
-**Work in progress**
-
-Simple responsive HTML menu for landing pages or websites. This uses the <a href="https://github.com/zachakbar/boilerplate" target="_blank">Boilerplate</a>.
+Simple responsive HTML menu for landing pages or websites. This uses the <a href="https://github.com/zachakbar/boilerplate" target="_blank">Boilerplate</a> as a base. All styles for the menu can be found in <code>_source/scss/_elements/<strong>_header.scss</strong></code>.
 
 HTML
 ```html
