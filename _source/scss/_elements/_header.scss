@@ -4,12 +4,12 @@
 
 header[role="banner"] {
 	@include clearfix;
-	@include background-image(linear-gradient(to bottom, tint($black,25%), tint($darkgrey,50%)));
+	background: $lightgrey;
 	
 	.wrap {
 		padding: 0;
 		
-		@include breakpoint($md){
+		@include breakpoint($lg){
 			@include wrap();
 		}
 	}
@@ -26,7 +26,7 @@ header[role="banner"] {
 		padding: 3rem 1.5rem 0 0;
 	   float: right;
 	    
-		@include breakpoint($md) {
+		@include breakpoint($lg) {
 			display: none !important;
 		}
 		
@@ -86,14 +86,13 @@ header[role="banner"] {
 	}
 	
 	nav[role="navigation"] {
-	    @include clearfix;
-	    background-color: $black;
-	    font-size: 1.8rem;
-	    width: 100%;
-	    overflow: hidden;
-	    display: none;
+		@include clearfix;
+		font-size: 1.8rem;
+		width: 100%;
+		overflow: hidden;
+		display: none;
 		
-		@include breakpoint($md) {
+		@include breakpoint($lg) {
 			background: none;
 			width: auto;
 			padding: 2rem 0 0;
@@ -107,27 +106,36 @@ header[role="banner"] {
 			margin: 0;
 			padding: 0;
 			
-			@include breakpoint($md) {
+			@include breakpoint($lg){
 				border: 0;
 				display: inline-block;
 			}
 			
 			li {
-				@include breakpoint($md) {
+				@include breakpoint($lg) {
 					display: inline-block;
 					float: left;
 				}
 			}
 			
 			a {
+				background-color: $black;
 				border-bottom: 1px solid $grey;
-				color: $white;
 				text-decoration: none;
 				padding: 1rem;
 				display: block;
 				
-				@include breakpoint($md) {
+				@include breakpoint($lg) {
+					background: none;
 					border: 0;
+				}
+				
+				&:hover{
+					background-color: $lightgrey;
+					
+					@include breakpoint($lg){
+						background: none;
+					}
 				}
 			}
 		}
